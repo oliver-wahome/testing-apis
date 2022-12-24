@@ -52,11 +52,31 @@ function getLocation(){
     }
 
     const errorCallback = (error) => {
-        console.log(error);
-        document.getElementById("locationData").innerText = error;
+        var output = document.getElementById("locationData");
+        switch(error.code) {
+            case error.PERMISSION_DENIED:
+                output.innerHTML = "User denied the request for Geolocation.";
+                break;
+            case error.POSITION_UNAVAILABLE:
+                output.innerHTML = "Location information is unavailable.";
+                break;
+            case error.TIMEOUT:
+                output.innerHTML = "The request to get user location timed out.";
+                break;
+            case error.UNKNOWN_ERROR:
+                output.innerHTML = "An unknown error occurred.";
+                break;
+        }
+        
     }
 
-    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    //checking if geolocation is supported
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    }
+    else {
+        document.getElementById("locationData").innerText = 'geolocation not available';
+    }
 }
 
 //using flutterwave api to process user payments on click of pay button
