@@ -26,7 +26,8 @@ fetch(url)
     .then(data => {
         console.log(data.drinks[0]);
         document.getElementById("drinkName").innerText = data.drinks[0].strDrink;
-        //document.getElementById("drinkImg").src = data.drinks[0].strDrinkThumb;
+        document.getElementById("drinkImg").src = data.drinks[0].strDrinkThumb;
+        document.getElementById("drinkInstructions").innerText = data.drinks[0].strInstructions;
     })
     .catch(err => {
         console.log(`error ${err}`);
