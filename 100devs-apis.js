@@ -25,6 +25,8 @@ fetch(url)
     .then(res => res.json())
     .then(data => {
         console.log(data.drinks[0]);
+        document.getElementById("drinkName").innerText = data.drinks[0].strDrink;
+        //document.getElementById("drinkImg").src = data.drinks[0].strDrinkThumb;
     })
     .catch(err => {
         console.log(`error ${err}`);
