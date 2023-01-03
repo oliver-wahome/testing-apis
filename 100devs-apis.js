@@ -6,7 +6,7 @@ function getDogImage(){
     fetch("https://dog.ceo/api/breeds/image/random")
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            //console.log(data);
             document.getElementById("outputImg").src = data.message;
         })
         .catch(err => {
@@ -36,11 +36,11 @@ function getDrink(){
     fetch(url)
         .then(res => res.json())
         .then(data => {
-            console.log(data.drinks);
+            //console.log(data.drinks);
 
             data.drinks.forEach(drink => {
                 var content = '';
-                console.log(drink.strDrink);
+                //console.log(drink.strDrink);
 
                 content += '<div class="row w-75 border rounded py-2 mb-3 bg-light">';
                     content += '<div class="col-md-6 d-flex flex-column align-items-center">';
