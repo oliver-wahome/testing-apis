@@ -2,6 +2,8 @@ fetch("https://api.nasa.gov/planetary/apod?api_key=GTgDxMg6JEfbQPwYdlLPfygL8XDmE
     .then(res => res.json())
     .then(data => {
         console.log(data);
+
+        document.getElementById("apodImage").src = data.hdurl;
     })
     .catch(err => {
         console.log(`err ${err}`);
