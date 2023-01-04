@@ -11,7 +11,18 @@ function getAPOD(){
         .then(res => res.json())
         .then(data => {
             console.log(data);
-
+            if(data.media_type == 'image'){
+                document.getElementById("apodVideo").style.display = 'none';
+                document.getElementById("apodImage").style.display = 'block';
+                //get picture hd url
+                document.getElementById("apodImage").src = data.hdurl;
+            }
+            else if(data.media.type == 'video'){
+                document.getElementById("apodImage").style.display = 'none';
+                document.getElementById("apodVideo").style.display = 'block';
+                //get video url
+                document.getElementById("apodVideo").src = data.hdurl;
+            }
 
             document.getElementById("apodImage").src = data.hdurl;
             document.getElementById("apodName").innerText = data.title;
@@ -40,13 +51,25 @@ function getAPofSelectedDate(){
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            if(data.media_type == 'image'){
+                document.getElementById("apodVideo").style.display = 'none';
+                document.getElementById("apodImage").style.display = 'block';
+                //get picture hd url
+                document.getElementById("apodImage").src = data.hdurl;
+            }
+            else if(data.media_type == 'video'){
+                document.getElementById("apodImage").style.display = 'none';
+                document.getElementById("apodVideo").style.display = 'block';
+                //get video url
+                document.getElementById("apodVideo").src = data.url;
+            }
 
-            document.getElementById("apodImage").src = data.hdurl;
+            
             document.getElementById("apodName").innerText = data.title;
             document.getElementById("apodDescription").innerText = data.explanation;
         })
         .catch(err => {
-            console.log(`err ${err}`);
+            console.log(err);
         });
 }
 //this statement calls the getAPofSelectedDate function onclick of dateInputBtn
