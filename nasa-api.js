@@ -1,5 +1,5 @@
 /**
- * Astronomy Picture of the Day
+ * Astronomy Picture of the Day Selector program
  */
 //this function fetches data of the current APOD(Astronomy Picture of the Day) from NASA API.
 //It then adds that information to html elements to be output to the DOM
