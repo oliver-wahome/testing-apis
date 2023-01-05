@@ -30,7 +30,7 @@
                 <div class="input-group">
                     <label class="input-group-text" for="dateInput">Select date</label>
                     <input id="dateInput" class="form-control" type="date">
-                    <button id="dateInputBtn" class="btn btn-outline-secondary">submit</button>
+                    <button id="dateInputBtn" class="btn btn-outline-secondary" onclick="getAPOD('onclick')">submit</button>
                 </div>
             </div>
         </div>
@@ -40,9 +40,9 @@
         </div>
 
         <div class="row d-flex justify-content-center pb-3">
-            <div class="col-md-8 rounded" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow:hidden;">
+            <div class="col-md-8 rounded" style="padding:0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow:hidden;">
                 <div class="row bg-secondary">
-                    <img id="apodImage" style="object-fit:cover; object-position:0% 100%; height:60vh; width:100%; display:none;" src="" alt="apod-image" />
+                    <img id="apodImage" style="object-fit:cover; object-position:50% 50%; height:60vh; width:100%; display:none;" src="" alt="apod-image" />
                     <iframe id="apodVideo" style="object-fit:cover; height:60vh; width:100%; display:none;" src="" frameborder="0"></iframe>
                 </div>
                 <div class="row text-center p-3">
